@@ -1,0 +1,23 @@
+Bom hoje fiz até a "Tarefa 16" da lista de exercício do site https://sqltest.online/ 
+
+na qual coloquei em praticas o uso de:
+
+Combinações de múltiplas condições e filtragem de dados. sendo o desafio mais complexo que tive foi o de mexer com 3 tabelas
+resolvido desta forma.
+
+select f.title,f.release_year,f.length from film as f
+
+    INNER JOIN film_category AS fc ON f.film_id=fc.film_id
+
+    INNER JOIN category AS c ON fc.category_id = c.category_id
+
+    WHERE c.category_id = 5 AND f.length > 180
+
+
+Oque acebei fazendo certo mas errado, pois não fiz como foi pedido usando apenas Where e AND:
+
+FROM film AS f, film_category AS fc, category AS c
+WHERE f.film_id = fc.film_id
+AND fc.category_id = c.category_id
+AND c.category = 5 
+AND f.length > 180;
